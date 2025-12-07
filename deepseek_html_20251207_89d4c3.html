@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوادر | مطعم فاست فود عصري</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- الشعار -->
+            <a href="#" class="navbar-logo">
+                <i class="fas fa-crown"></i>
+                <span class="logo-text">نوادر</span>
+            </a>
+            
+            <!-- قائمة التنقل -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link" data-page="menu">
+                        <i class="fas fa-utensils"></i>
+                        <span>القائمة</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link" data-page="gallery">
+                        <i class="fas fa-images"></i>
+                        <span>المعرض</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link cart-link" data-page="cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>السلة</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link" data-page="contact">
+                        <i class="fas fa-phone"></i>
+                        <span>اتصل بنا</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- زر القائمة للموبايل -->
+            <button class="navbar-toggle" id="navbarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- سلة الطلبات العائمة -->
+    <div class="floating-cart" id="floatingCart">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> سلة طلباتك</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- العناصر تضاف هنا -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>السلة فارغة</p>
+                <a href="#" class="btn btn-outline" data-page="menu">تصفح القائمة</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>المجموع:</span>
+                <span class="total-price">0 ر.س</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                <i class="fas fa-paper-plane"></i> إرسال الطلب
+            </button>
+        </div>
+    </div>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="page active" id="home">
+        <!-- الهيدر الرئيسي -->
+        <section class="hero-section">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>تجربة طعام استثنائية</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">نكهات فريدة</span>
+                        <span class="title-line">في أجواء عصرية</span>
+                    </h1>
+                    <p class="hero-description">
+                        نقدم لكم تشكيلة مميزة من الأطباق السريعة بأسلوب عصري وأنيق، كل طبق يحمل بصمة إبداعية خاصة.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" data-page="menu">
+                            <i class="fas fa-eye"></i>
+                            تصفح القائمة
+                        </a>
+                        <a href="#" class="btn btn-outline" data-page="contact">
+                            <i class="fas fa-calendar"></i>
+                            احجز طاولة
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ميزات المطعم -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">لماذا تختار نوادر؟</h2>
+                    <p class="section-subtitle">تجربة طعام استثنائية تجمع بين الجودة والأناقة</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>تصوير احترافي</h3>
+                        <p>مساحات مصممة خصيصاً لالتقاط أفضل الصور لأطباقنا</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>توصيل سريع</h3>
+                        <p>توصيل خلال 30 دقيقة لجميع مناطق المدينة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>مكونات طازجة</h3>
+                        <p>نستخدم أفضل المكونات الطازجة في جميع أطباقنا</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>جودة مميزة</h3>
+                        <p>التزام بأعلى معايير الجودة والنظافة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الأطباق المميزة -->
+        <section class="featured-dishes">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">أطباقنا المميزة</h2>
+                    <p class="section-subtitle">تشكيلة فريدة من الأطباق المصممة بعناية</p>
+                </div>
+                <div class="dishes-grid">
+                    <!-- الأطباق تضاف ديناميكياً -->
+                </div>
+            </div>
+        </section>
+
+        <!-- معرض الصور -->
+        <section class="gallery-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">لحظات من نوادر</h2>
+                    <p class="section-subtitle">استمتع بأجواء مطعمنا من خلال الصور</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800')">
+                        <div class="gallery-overlay">
+                            <h3>برجر الكلاسيك</h3>
+                            <p>تصوير: فريق نوادر</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w-800')">
+                        <div class="gallery-overlay">
+                            <h3>بطاطس التوابل</h3>
+                            <p>تصوير: فريق نوادر</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=800')">
+                        <div class="gallery-overlay">
+                            <h3>ميلك شيك الفراولة</h3>
+                            <p>تصوير: فريق نوادر</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- صفحة القائمة -->
+    <div class="page" id="menu">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">قائمة الطعام</h1>
+                <p class="page-description">اكتشف تشكيلتنا المميزة من الأطباق والأشربة</p>
+            </div>
+        </div>
+
+        <div class="menu-container">
+            <div class="container">
+                <!-- فلاتر القائمة -->
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="burgers">برجر</button>
+                    <button class="filter-btn" data-filter="appetizers">مقبلات</button>
+                    <button class="filter-btn" data-filter="drinks">مشروبات</button>
+                    <button class="filter-btn" data-filter="desserts">حلويات</button>
+                </div>
+
+                <!-- عناصر القائمة -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- العناصر تضاف ديناميكياً -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة المعرض -->
+    <div class="page" id="gallery">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">معرض الصور</h1>
+                <p class="page-description">لقطات رائعة من أجواء مطعمنا وأطباقنا</p>
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <div class="container">
+                <div class="gallery-main" id="galleryMain">
+                    <!-- الصور تضاف ديناميكياً -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة السلة -->
+    <div class="page" id="cart">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">سلة الطلبات</h1>
+                <p class="page-description">راجع طلباتك وأكمل عملية الشراء</p>
+            </div>
+        </div>
+
+        <div class="cart-page">
+            <div class="container">
+                <div class="cart-wrapper">
+                    <div class="cart-items-list" id="cartPageItems">
+                        <!-- عناصر السلة تضاف هنا -->
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h3><i class="fas fa-receipt"></i> ملخص الطلب</h3>
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span>المجموع الفرعي</span>
+                                <span class="subtotal">0 ر.س</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>رسوم التوصيل</span>
+                                <span class="delivery">15 ر.س</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>الضريبة</span>
+                                <span class="tax">5%</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span>المجموع الكلي</span>
+                                <span class="grand-total">15 ر.س</span>
+                            </div>
+                        </div>
+                        
+                        <!-- نموذج معلومات العميل -->
+                        <div class="customer-info">
+                            <h4><i class="fas fa-user"></i> معلومات العميل</h4>
+                            <form id="orderForm">
+                                <div class="form-group">
+                                    <input type="text" id="customerName" placeholder="الاسم الكامل" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="customerPhone" placeholder="رقم الهاتف" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="customerAddress" placeholder="عنوان التوصيل" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="orderNotes" placeholder="ملاحظات إضافية (اختياري)" rows="2"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="agreeTerms" required>
+                                        <span>أوافق على الشروط والأحكام</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block" id="submitOrder">
+                                    <i class="fas fa-paper-plane"></i>
+                                    تأكيد الطلب وإرساله
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- صفحة الاتصال -->
+    <div class="page" id="contact">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">اتصل بنا</h1>
+                <p class="page-description">نحن هنا لخدمتك في أي وقت</p>
+            </div>
+        </div>
+
+        <div class="contact-container">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>العنوان</h3>
+                                <p>شارع الملك فهد، حي العليا، الرياض 12211</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>الهاتف</h3>
+                                <p>+966 11 234 5678</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>ساعات العمل</h3>
+                                <p>الأحد - الخميس: 10 ص - 12 ص</p>
+                                <p>الجمعة - السبت: 1 م - 1 ص</p>
+                            </div>
+                        </div>
+                        <div class="map-placeholder">
+                            <div class="map-overlay">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h4>موقعنا على الخريطة</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3><i class="fas fa-envelope"></i> أرسل رسالة</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" placeholder="الاسم" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="البريد الإلكتروني" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="الموضوع" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="الرسالة" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-crown"></i> نوادر</h3>
+                    <p>مطعم نوادر يقدم تجربة طعام استثنائية تجمع بين النكهات الفريدة والأجواء العصرية.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-snapchat"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">الرئيسية</a></li>
+                        <li><a href="#" data-page="menu">قائمة الطعام</a></li>
+                        <li><a href="#" data-page="gallery">معرض الصور</a></li>
+                        <li><a href="#" data-page="cart">السلة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>وسائل الدفع</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-apple-pay"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="delivery-info">
+                        <p><i class="fas fa-truck"></i> التوصيل متاح 24/7</p>
+                        <p><i class="fas fa-clock"></i> خدمة العملاء: 24 ساعة</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 نوادر. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة تأكيد الطلب -->
+    <div class="order-modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> تم استلام طلبك</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="order-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>شكراً لك! تم استلام طلبك بنجاح</h4>
+                    <p class="order-id">رقم الطلب: <span id="orderNumber">#12345</span></p>
+                    <p>سنقوم بتجهيز طلبك وإرساله إليك في أقرب وقت ممكن.</p>
+                    <div class="order-details">
+                        <p><strong>الوقت المتوقع للتوصيل:</strong> 30-45 دقيقة</p>
+                        <p><strong>طريقة الدفع:</strong> نقداً عند الاستلام</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">متابعة التسوق</button>
+                <button class="btn btn-primary" onclick="printOrder()">
+                    <i class="fas fa-print"></i> طباعة الطلب
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
